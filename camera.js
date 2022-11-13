@@ -6,6 +6,9 @@ document.querySelector('#get-access').addEventListener('click', async function i
           minFrameRate: 30,
           width: 1280,
           heigth: 720,
+          facingMode: {
+            exact: 'environment'
+          }
         },
         audio: false
       })
