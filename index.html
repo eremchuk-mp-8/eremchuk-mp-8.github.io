@@ -9,6 +9,10 @@
   </head>
   <body>
     <h1>My Sample PWA</h1>
+    <button id="get-access">Включить камеру</button>
+    <video autoplay></video>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="camera.js"></script>
     <script>
         if('serviceWorker' in navigator) {
           navigator.serviceWorker.register('/sw.js', { scope: '/' });
