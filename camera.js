@@ -1,12 +1,15 @@
 document.querySelector('#get-access').addEventListener('click', async function init(e) {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
-        audio: false,
         video: {
-            facingMode: {
-                //Use the back camera
-                      exact: 'environment'
-                    }
+          minAspectRatio: 1.333,
+          minFrameRate: 30,
+          width: 1280,
+          heigth: 720,
+          facingMode:
+          {
+            exact: 'environment'
+          }
         }
       })
       const videoTracks = stream.getVideoTracks()
