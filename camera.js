@@ -10,7 +10,8 @@ document.querySelector('#get-access').addEventListener('click', async function i
         }
       })
       const videoTracks = stream.getVideoTracks()
-      const track = videoTracks[1]
+      console.log(videoTracks)
+      const track = videoTracks[0]
       alert(`Getting video from: ${track.label}`)
       document.querySelector('video').srcObject = stream
       document.querySelector('#get-access').setAttribute('hidden', true)
