@@ -11,7 +11,7 @@ $("#calc").on('click', function() {
 
     x = x > width/2 ? width-x : width/2-x;
     y = y > height/2 ? height-y : height/2-y;
-    var F = a/2/Math.tan(alpha_width/2);
+    var F = width/2/Math.tan(alpha_width/2);
     var alpha_x = 2*Math.atan(x/2/F);
     var alpha_y = 2*Math.atan(y/2/F);
     var X = Math.tan(alpha_x/2)*2*S;
