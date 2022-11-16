@@ -12,9 +12,14 @@ $("#calc").on('click', function() {
     x = x > width/2 ? width-x : width/2-x;
     y = y > height/2 ? height-y : height/2-y;
     var F = width/2/Math.tan(alpha_width/2);
+    var W = 2*Math.atan(alpha_width/2)*S
+    var H = 2*Math.atan(alpha_height/2)*S
     var alpha_x = 2*Math.atan(x/2/F);
     var alpha_y = 2*Math.atan(y/2/F);
     var X = Math.tan(alpha_x/2)*2*S;
     var Y = Math.tan(alpha_y/2)*2*S;
-    $("#answer").text(X.toString() + ", "+ Y.toString());
+    X = x > width/2 ? W/2+X : W/2-X;
+    Y = y > height/2 ? H/2+Y : H/2-Y;
+    $("#params").text("Размер захватываемой области: " + W.toString() + "x"+ H.toString());
+    $("#answer").text("Точка: " + X.toString() + ", "+ Y.toString());
 });
