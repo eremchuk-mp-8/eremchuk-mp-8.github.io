@@ -1,5 +1,4 @@
 var default_alpha = 60;
-var alpha_width = Math.PI/180*(default_alpha+30);
 var alpha_height = Math.PI/180*default_alpha;
 
 $("#calc").on('click', function() {
@@ -11,9 +10,10 @@ $("#calc").on('click', function() {
 
     x = x > width/2 ? width-x : width/2-x;
     y = y > height/2 ? height-y : height/2-y;
-    var F = width/2/Math.tan(alpha_width/2);
-    var W = 2*Math.atan(alpha_width/2)*S
-    var H = 2*Math.atan(alpha_height/2)*S
+    var F = height/2/Math.tan(alpha_height/2);
+    var alpha_width = 2*Math.atan(width/2/F);
+    var W = 2*Math.atan(alpha_width/2)*S;
+    var H = 2*Math.atan(alpha_height/2)*S;
     var alpha_x = 2*Math.atan(x/2/F);
     var alpha_y = 2*Math.atan(y/2/F);
     var X = Math.tan(alpha_x/2)*2*S;
