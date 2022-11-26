@@ -2,7 +2,7 @@ var default_alpha = 60;
 var alpha_height = Math.PI/180*default_alpha;
 
 $("#calc").on('click', function() {
-    var S = Number($("#S").val());
+    var S = Number($("#S").val())*1000;
     var width = Number($("#photo_width").val());
     var height = Number($("#photo_height").val());
     var x = Number($("#x").val());
