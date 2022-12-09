@@ -12,6 +12,7 @@
     <h1>My Sample PWA</h1>
     <button id="get-access">Включить камеру</button>
     <video autoplay></video>
+    <button type="button" id="loc">Геолокация</button>
     <p id="geo"></p>
     <p>Начало координат в левом верхнем углу</p>
     <input type="text" placeholder="Расстояние до объекта" id="S">
@@ -19,13 +20,12 @@
     <input type="text" placeholder="высота снимка" id="photo_height">
     <input type="text" placeholder="абсцисса" id="x">
     <input type="text" placeholder="ордината" id="y">
-    <button type="button" name="auth-button" id="calc">Посчитать</button>
+    <button type="button" id="calc">Посчитать</button>
     <p id="params"></p>
     <p id="answer"></p>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="camera.js"></script>
     <script src="optics-calc.js"></script>
-    <script src="geolocation.js"></script>
     <script>
         if('serviceWorker' in navigator) {
           navigator.serviceWorker.register('/sw.js', { scope: '/' });
