@@ -36,7 +36,7 @@ processor.doLoad = function doLoad() {
   };
 
   function main() {
-    const canvas = document.querySelector('#c');
+    const canvas = document.querySelector('#c1');
     const renderer = new THREE.WebGLRenderer({canvas});
   
     const fov = 75;
