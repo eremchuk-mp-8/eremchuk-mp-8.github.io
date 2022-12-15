@@ -32,17 +32,42 @@ processor.doLoad = function doLoad() {
   };
 
   processor.computeFrame = function () {
-    this.ctx1.drawImage(this.video, 0, 0, this.width, this.height);
-    const frame = this.ctx1.getImageData(0, 0, this.width, this.height);
-    const data = frame.data;
-  
-    for (let i = 0; i < data.length; i += 4) {
-      const red = data[i + 0];
-      const green = data[i + 1];
-      const blue = data[i + 2];
-      if (green > 100 && red > 100 && blue < 43) {
-        data[i + 3] = 0;
-      }
-    }
-    this.ctx2.putImageData(frame, 0, 0);
+    main();
   };
+
+  function main() {
+    const canvas = document.querySelector('#c');
+    const renderer = new THREE.WebGLRenderer({canvas});
+  
+    const fov = 75;
+    const aspect = 2;  // the canvas default
+    const near = 0.1;
+    const far = 5;
+    const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+    camera.position.z = 2;
+  
+    const scene = new THREE.Scene();
+  
+    const boxWidth = 1;
+    const boxHeight = 1;
+    const boxDepth = 1;
+    const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+  
+    const material = new THREE.MeshBasicMaterial({color: 0x44aa88});  // greenish blue
+  
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+  
+    function render(time) {
+      time *= 0.001;  // convert time to seconds
+  
+      cube.rotation.x = time;
+      cube.rotation.y = time;
+  
+      renderer.render(scene, camera);
+  
+      requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+  
+  }
