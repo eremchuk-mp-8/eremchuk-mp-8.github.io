@@ -14,8 +14,8 @@
   </head>
   <body>
     <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
-      <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
-      <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 55.17669887946596; longitude: 61.46274983882905" scale="100 100 100"></a-entity>
+      <a-camera gps-new-camera='gpsMinDistance: 1'></a-camera>
+      <a-entity gltf-model="./big_boss_arachnapod/scene.gltf" scale="0.15 0.15 0.15" gps-entity-place="longitude: 55.17669887946596; latitude: 61.46274983882905;" animation-mixer/>
       <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 55.16067746951601; longitude: 61.36981666088105" scale="100 100 100"></a-entity>
       <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 55.15935661857295; longitude: 61.36300519108774" scale="100 100 100"></a-entity>
       <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 55.155237489248414; longitude: 61.493268013000495" scale="100 100 100"></a-entity>
