@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2" />
+    <link rel="manifest" href="/manifest.json">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <title>EcoAR</title>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+        renderer="logarithmicDepthBuffer: true;"
+        embedded
+        loading-screen="enabled: false;"
+        arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+        <a-assets>
+            <a-asset-item
+                id="animated-asset"
+                src="./big_boss_arachnapod/scene.gltf"
+            ></a-asset-item>
+        </a-assets>
+
+            <a-entity
+                look-at="[gps-camera]"
+                animation-mixer="loop: repeat"
+                gltf-model="#animated-asset"
+                scale="10 10 10"
+                gps-entity-place="latitude: 55.17586257960235; longitude: 61.462041735649116;"
+            ></a-entity>
+            <a-entity
+            look-at="[gps-camera]"
+            animation-mixer="loop: repeat"
+            gltf-model="#animated-asset"
+            scale="10 10 10"
+            gps-entity-place="latitude: 55.16067746951601; longitude: 61.36981666088105;"
+            ></a-entity>
+            <a-entity
+            look-at="[gps-camera]"
+            animation-mixer="loop: repeat"
+            gltf-model="#animated-asset"
+            scale="10 10 10"
+            gps-entity-place="latitude: 55.15935661857295; longitude: 61.36300519108774;"
+            ></a-entity>
+            <a-entity
+            look-at="[gps-camera]"
+            animation-mixer="loop: repeat"
+            gltf-model="#animated-asset"
+            scale="10 10 10"
+            gps-entity-place="latitude: 55.155237489248414; longitude: 61.493268013000495;"
+            ></a-entity>
+
+        <a-camera gps-camera="gpsMinDistance: 20;" rotation-reader></a-camera>
+    </a-scene>
+        <!--
+    <button id="get-access">Включить камеру</button>
+    <div>
+      <video
+        autoplay
+        id="video"
+        crossorigin="anonymous" />
+    </div>
+    <button type="button" id="loc">Геолокация</button>
+    <p id="geo"></p>
+    <p>Начало координат в левом верхнем углу</p>
+    <input type="text" placeholder="Расстояние до объекта" id="S">
+    <input type="text" placeholder="ширина снимка" id="photo_width">
+    <input type="text" placeholder="высота снимка" id="photo_height">
+    <input type="text" placeholder="абсцисса" id="x">
+    <input type="text" placeholder="ордината" id="y">
+    <button type="button" id="calc">Посчитать</button>
+    <p id="params"></p>
+    <p id="answer"></p>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="camera.js"></script>
+    <script src="optics-calc.js"></script>
+    <script src="processor.js"></script>
+    -->
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' });
+      }
+  </script>    
+</body>
+</html>
